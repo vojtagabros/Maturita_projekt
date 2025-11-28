@@ -1,20 +1,27 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Door : MonoBehaviour
 {
-    public Transform destination; // where player and camera should move
+    public Transform TPto; //point thru wich plyaer will tp BACK to level
+    public Transform TPcamera; //camera will move to this point
     public Camera mainCamera;
+    public GameObject Player;
+    
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Move player to destination
-            other.transform.position = destination.position;
-
             // Move camera if it's fixed per room
             if (mainCamera != null)
-                mainCamera.transform.position = destination.position;
+                mainCamera.transform.position = TPcamera.position;
+            
+            // Move player to destination
+            NavMeshAgent agent = Player.GetComponent<NavMeshAgent>();
+            agent.Warp(TPto.position);
+
+
         }
     }
 }
