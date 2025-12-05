@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
-    public GameObject destination;
+    public GameObject destinationOfPlayer;
 
     private NavMeshAgent agent;
     // Start is called before the first frame update
@@ -17,6 +17,6 @@ public class AIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(destination.transform.position);
+        agent.SetDestination(destinationOfPlayer.transform.position);
     }
 }
