@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerDrag : MonoBehaviour
 {
-    public Rigidbody playerRigidbody; // Drag your Player (Rigidbody) here
+    public Rigidbody playerRigidbody;
+    public float throwForce;
 
 
     void Update()
@@ -18,6 +19,8 @@ public class PlayerDrag : MonoBehaviour
         {
             DisconnectJoint();
         }
+
+
     }
 
 
@@ -32,15 +35,15 @@ public class PlayerDrag : MonoBehaviour
             Debug.Log("Object too far to grab");
             return; // don't attach
         }
-        // Add SpringJoint if not already present
+        
         SpringJoint joint = gameObject.GetComponent<SpringJoint>();
         if (joint == null)
             joint = gameObject.AddComponent<SpringJoint>();
 
-        // Assign connected body (Player)
+        
         joint.connectedBody = playerRigidbody;
 
-        // Set values from your screenshot
+        
         joint.autoConfigureConnectedAnchor = true;
         joint.anchor = Vector3.zero;
         joint.connectedAnchor = new Vector3(0.319999f, -0.16f, -2.62f);
@@ -57,7 +60,7 @@ public class PlayerDrag : MonoBehaviour
         joint.connectedMassScale = 1f;
     }
     
-    void DisconnectJoint()
+    public void DisconnectJoint()
     {
         SpringJoint joint = gameObject.GetComponent<SpringJoint>();
         if (joint != null)
@@ -66,4 +69,6 @@ public class PlayerDrag : MonoBehaviour
             Debug.Log("SpringJoint disconnected");
         }
     }
+
+
 }
