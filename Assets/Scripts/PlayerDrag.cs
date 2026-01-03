@@ -1,11 +1,20 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
+using Unity.VisualScripting;
+using UnityEngine;
+using System.Collections.Generic;
+
+
 
 public class PlayerDrag : MonoBehaviour
 {
     public Rigidbody playerRigidbody;
     public float throwForce;
+    public static HashSet<PlayerDrag> GrabbedObjects = new HashSet<PlayerDrag>();
+
+
 
 
     void Update()
@@ -58,6 +67,10 @@ public class PlayerDrag : MonoBehaviour
         joint.enablePreprocessing = true;
         joint.massScale = 50f;
         joint.connectedMassScale = 1f;
+        
+        
+        joint.connectedBody = playerRigidbody;
+        GrabbedObjects.Add(this);
     }
     
     public void DisconnectJoint()
@@ -66,8 +79,11 @@ public class PlayerDrag : MonoBehaviour
         if (joint != null)
         {
             Destroy(joint);
+            GrabbedObjects.Remove(this);
             Debug.Log("SpringJoint disconnected");
         }
+        
+        
     }
 
 

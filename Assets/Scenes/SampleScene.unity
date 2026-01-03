@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!23 &17892102
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -651,6 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!23 &523304948
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1758,13 +1760,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053705415}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.00038429824, y: -0.0009482192, z: 0.0007895005, w: 0.99999917}
   m_LocalPosition: {x: 8.84, y: 5.4900002, z: -6.34}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 437792320}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.044, y: -0.109, z: 0.091}
 --- !u!208 &1053705421
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1821,6 +1823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!1 &1061758757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,6 +3004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!23 &1437562598
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3472,6 +3476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!23 &1505124881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3902,6 +3907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!23 &1872731932
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4209,6 +4215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!23 &1996494769
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4373,6 +4380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
+  throwForce: 2
 --- !u!23 &2113934158
 MeshRenderer:
   m_ObjectHideFlags: 0
