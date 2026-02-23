@@ -36,7 +36,7 @@ public class PlayerDrag : MonoBehaviour
 
     void SetJoint()
     {
-        float maxDistance = 1.2f; // player reach distance
+        float maxDistance = 2.5f; // player reach distance
         float distance = Vector3.Distance(playerRigidbody.position, transform.position);
 
         if (distance > maxDistance)
