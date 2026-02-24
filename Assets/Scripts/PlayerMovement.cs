@@ -2,17 +2,25 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Jobs;
+using Random = UnityEngine.Random;
 
 public class RayVisualizer : MonoBehaviour
 {
     public string targetLayerName = "Ground";
     private Vector3 targetPosition;
     private NavMeshAgent agent;
+    public Transform[] spawnPoints;
 
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        
+        //spawn
+        int randomIndex = Random.Range(0, spawnPoints.Length);
+        Transform chosenSpawn = spawnPoints[randomIndex];
+        agent.Warp(chosenSpawn.position);   
+        
     }
 
     void Update()
