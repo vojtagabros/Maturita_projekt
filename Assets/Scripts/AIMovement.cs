@@ -5,41 +5,47 @@ using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
-    public GameObject destinationOfPlayer;
+    public GameObject player;
     public Transform[] spawnPoints;
     public Transform[] destinations;
     public float timeToWait = 5f;
 
     private NavMeshAgent agent;
+    private bool hasDetectedPlayer = false;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
-        // spawn
+        // Spawn
         int randomIndex = Random.Range(0, spawnPoints.Length);
-        Transform chosenSpawn = spawnPoints[randomIndex];
-        agent.Warp(chosenSpawn.position);
+        agent.Warp(spawnPoints[randomIndex].position);
 
-        StartCoroutine(UpdateDestinationRoutine());
+        StartCoroutine(WanderRoutine());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //agent.SetDestination(destinationOfPlayer.transform.position);
-        //agent.SetDestination(destinations[Random.Range(0, destinations.Length)].position);
-        //WaitUntil waitUntil = new WaitUntil(() => !agent.pathPending);
-        //yield return new WaitForSeconds(2);
-    }
-    
-    IEnumerator UpdateDestinationRoutine()
-    {
-        while (true)
+        if (hasDetectedPlayer)
         {
-            agent.SetDestination(destinations[Random.Range(0, destinations.Length)].transform.position);
+            agent.SetDestination(player.transform.position);
+        }
+    }
+
+    IEnumerator WanderRoutine()
+    {
+        while (!hasDetectedPlayer)
+        {
+            agent.SetDestination(destinations[Random.Range(0, destinations.Length)].position);
             yield return new WaitForSeconds(timeToWait);
         }
+    }
+
+    // Call this when player becomes visible
+    public void OnPlayerSeen()
+    {
+        hasDetectedPlayer = true;
+        StopCoroutine(WanderRoutine());
     }
     
 }

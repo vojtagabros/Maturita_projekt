@@ -5,15 +5,23 @@ using UnityEngine;
 public class EnemyVisibility : MonoBehaviour
 {
     private Renderer rend;
+    private AIMovement ai;
 
     void Awake()
     {
         rend = GetComponent<Renderer>();
-        rend.enabled = false; // Start hidden
+        ai = GetComponent<AIMovement>();
+
+        rend.enabled = false;
     }
 
     public void SetVisible(bool value)
     {
         rend.enabled = value;
+
+        if (value)
+        {
+            ai.OnPlayerSeen(); // Start chasing forever
+        }
     }
 }
