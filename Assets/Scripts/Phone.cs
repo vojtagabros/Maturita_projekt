@@ -14,6 +14,7 @@ public class PhonePickup : MonoBehaviour
             foreach (GameObject phone in phones)
             {
                 Destroy(phone);
+                GameData.PhoneFound = true;
             }
         }
     }

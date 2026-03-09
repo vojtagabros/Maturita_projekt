@@ -22,6 +22,7 @@ public class EnemyVisibility : MonoBehaviour
         if (value)
         {
             ai.OnPlayerSeen(); // Start chasing forever
+            GameData.PlayerSeen = true;
         }
     }
 }

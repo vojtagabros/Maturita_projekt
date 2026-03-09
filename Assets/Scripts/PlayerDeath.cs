@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerDeath : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("DIED");
+            GameData.Died = true;
+            SceneManager.LoadScene(2);
         }
     }
 }

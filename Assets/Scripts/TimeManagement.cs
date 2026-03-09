@@ -24,5 +24,6 @@ public class TimeManagement : MonoBehaviour
     {
         helpCalled = Time.time;
         Debug.Log("Help called at: " + helpCalled);
+        GameData.HelpCalled = helpCalled;
     }
 }
