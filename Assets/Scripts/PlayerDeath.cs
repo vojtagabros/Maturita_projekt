@@ -3,7 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
-    private bool _fightResolved = false;
+    private static bool _fightResolved = false;
+
+    void Awake()
+    {
+        _fightResolved = false;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

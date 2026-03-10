@@ -65,7 +65,7 @@ public class DisplayInfo : MonoBehaviour
 
         string result = "";
         if (GameData.FoughtAttacker)
-            result = "\nSouboj s útočníkem: Vyhráli jste! ✓";
+            result = "\nSouboj s útočníkem: Vyhráli jste! ✓  (-200 bodů)";
 
         return
             "Čas úniku:       " + time + "  (bonus " + timeBonus + " bodů)\n" +
@@ -92,7 +92,7 @@ public class DisplayInfo : MonoBehaviour
     {
         if (GameData.Escaped)
         {
-            int score = 500;
+            int score = GameData.FoughtAttacker ? 300 : 500;
             score += Mathf.Clamp(300 - Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 300);
             if (!GameData.PlayerSeen) score += 100;
             if (GameData.HelpCalled == 0) score += 75;
