@@ -1,20 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private Quaternion my_rotation;
-    // Start is called before the first frame update
+    private Quaternion _initialRotation;
+
     void Start()
     {
-        my_rotation = this.transform.rotation;
+        _initialRotation = transform.rotation;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
-        this.transform.rotation = my_rotation;
-
+        transform.rotation = _initialRotation;
     }
 }

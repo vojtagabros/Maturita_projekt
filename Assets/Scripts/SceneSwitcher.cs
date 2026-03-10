@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Důležitá knihovna
+using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
     public void LoadGameScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("SampleScene");
     }
 }

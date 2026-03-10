@@ -6,16 +6,8 @@ public class PhonePickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("phone found");
-
-            // Find all phones
-            GameObject[] phones = GameObject.FindGameObjectsWithTag("phone");
-
-            foreach (GameObject phone in phones)
-            {
-                Destroy(phone);
-                GameData.PhoneFound = true;
-            }
+            GameData.PhoneFound = true;
+            Destroy(gameObject);
         }
     }
 }

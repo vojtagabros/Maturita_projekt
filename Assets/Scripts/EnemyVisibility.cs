@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyVisibility : MonoBehaviour
 {
     private Renderer rend;
     private AIMovement ai;
+    private bool _alreadySeen = false;
 
     void Awake()
     {
         rend = GetComponent<Renderer>();
         ai = GetComponent<AIMovement>();
-
         rend.enabled = false;
     }
 
@@ -19,10 +17,11 @@ public class EnemyVisibility : MonoBehaviour
     {
         rend.enabled = value;
 
-        if (value)
+        if (value && !_alreadySeen)
         {
-            ai.OnPlayerSeen(); // Start chasing forever
+            _alreadySeen = true;
             GameData.PlayerSeen = true;
+            ai.OnPlayerSeen();
         }
     }
 }

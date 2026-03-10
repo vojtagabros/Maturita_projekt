@@ -7,8 +7,16 @@ public class AreaLightDetector : MonoBehaviour
     public LayerMask obstacleLayer;
     public LayerMask enemyLayer;
 
+    private float _checkInterval = 0.15f;
+    private float _timer = 0f;
+
     void Update()
     {
+        _timer += Time.deltaTime;
+        if (_timer < _checkInterval)
+            return;
+        _timer = 0f;
+
         Collider[] enemies = Physics.OverlapSphere(areaLight.transform.position, maxDistance, enemyLayer);
 
         foreach (Collider enemyCol in enemies)
@@ -17,23 +25,10 @@ public class AreaLightDetector : MonoBehaviour
             Vector3 direction = enemy.position - areaLight.transform.position;
             float distance = direction.magnitude;
 
-            if (distance > maxDistance)
-            {
-                SetEnemyVisible(enemy, false);
-                continue;
-            }
-
-            direction.Normalize();
-
-            // Raycast to check obstacle
-            if (!Physics.Raycast(areaLight.transform.position, direction, distance, obstacleLayer))
-            {
+            if (!Physics.Raycast(areaLight.transform.position, direction.normalized, distance, obstacleLayer))
                 SetEnemyVisible(enemy, true);
-            }
             else
-            {
                 SetEnemyVisible(enemy, false);
-            }
         }
     }
 

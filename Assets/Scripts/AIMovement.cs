@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,16 +11,16 @@ public class AIMovement : MonoBehaviour
 
     private NavMeshAgent agent;
     private bool hasDetectedPlayer = false;
-    // Start is called before the first frame update
+    private Coroutine _wanderCoroutine;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
-        // Spawn
         int randomIndex = Random.Range(0, spawnPoints.Length);
         agent.Warp(spawnPoints[randomIndex].position);
 
-        StartCoroutine(WanderRoutine());
+        _wanderCoroutine = StartCoroutine(WanderRoutine());
     }
 
     void Update()
@@ -41,11 +40,11 @@ public class AIMovement : MonoBehaviour
         }
     }
 
-    // Call this when player becomes visible
     public void OnPlayerSeen()
     {
+        if (hasDetectedPlayer) return;
         hasDetectedPlayer = true;
-        StopCoroutine(WanderRoutine());
+        if (_wanderCoroutine != null)
+            StopCoroutine(_wanderCoroutine);
     }
-    
 }
