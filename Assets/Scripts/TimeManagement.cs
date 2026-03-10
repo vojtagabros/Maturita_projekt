@@ -15,7 +15,7 @@ public class TimeManagement : MonoBehaviour
         if (GameData.HelpCalled != 0)
             return;
 
-        GameData.HelpCalled = Time.time;
+        GameData.HelpCalled = Time.time - GameData.GameStartTime;
         CallHelpButton.interactable = false;
     }
 }
