@@ -9,6 +9,12 @@ public class AIMovement : MonoBehaviour
     public Transform[] destinations;
     public float timeToWait = 5f;
 
+    [Header("Movement")]
+    public float moveSpeed = 5.5f;
+    public float acceleration = 20f;
+    public float angularSpeed = 720f;
+    public float stoppingDistance = 0.2f;
+
     private NavMeshAgent agent;
     private bool hasDetectedPlayer = false;
     private Coroutine _wanderCoroutine;
@@ -16,6 +22,12 @@ public class AIMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        agent.speed = moveSpeed;
+        agent.acceleration = acceleration;
+        agent.angularSpeed = angularSpeed;
+        agent.stoppingDistance = stoppingDistance;
+        agent.autoBraking = true;
 
         int randomIndex = Random.Range(0, spawnPoints.Length);
         agent.Warp(spawnPoints[randomIndex].position);
