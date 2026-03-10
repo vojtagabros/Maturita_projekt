@@ -6,7 +6,7 @@ public class PhonePickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameData.PhoneFound = true;
+            GameData.WeaponFound = true;
             Destroy(gameObject);
         }
     }

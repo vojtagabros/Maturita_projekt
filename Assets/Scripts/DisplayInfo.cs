@@ -61,7 +61,6 @@ public class DisplayInfo : MonoBehaviour
         string help = GameData.HelpCalled == 0
             ? "Ne  (+75 bodů)"
             : "Ano, v " + GameData.HelpCalled.ToString("F1") + "s  (-75 bodů)";
-        string phone = GameData.PhoneFound ? "Ano  (+25 bodů)" : "Ne";
         string timeBonus = Mathf.Clamp(300 - Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 300).ToString();
 
         string result = "";
@@ -71,15 +70,13 @@ public class DisplayInfo : MonoBehaviour
         return
             "Čas úniku:       " + time + "  (bonus " + timeBonus + " bodů)\n" +
             "Detekován:       " + detected + "\n" +
-            "Volal pomoc:     " + help + "\n" +
-            "Našel telefon:   " + phone +
+            "Volal pomoc:     " + help +
             result;
     }
 
     private string BuildFailStats()
     {
         string time = GameData.SurvivalTime.ToString("F1") + "s";
-        string phone = GameData.PhoneFound ? "Ano  (+25 bodů)" : "Ne";
         int survivalBonus = Mathf.Clamp(Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 200);
 
         string result = "";
@@ -88,7 +85,6 @@ public class DisplayInfo : MonoBehaviour
 
         return
             "Přežil:          " + time + "  (bonus " + survivalBonus + " bodů)\n" +
-            "Našel telefon:   " + phone +
             result;
     }
 
@@ -100,14 +96,12 @@ public class DisplayInfo : MonoBehaviour
             score += Mathf.Clamp(300 - Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 300);
             if (!GameData.PlayerSeen) score += 100;
             if (GameData.HelpCalled == 0) score += 75;
-            if (GameData.PhoneFound) score += 25;
             return score;
         }
         else
         {
             int score = 0;
             score += Mathf.Clamp(Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 200);
-            if (GameData.PhoneFound) score += 25;
             return score;
         }
     }

@@ -7,7 +7,7 @@ public class GameData : MonoBehaviour
     public static bool Died = false;
     public static bool Escaped = false;
     public static bool PlayerSeen = false;
-    public static bool PhoneFound = false;
+    public static bool WeaponFound = false;
     public static float GameStartTime = 0;
     public static float SurvivalTime = 0;
     public static bool FoughtAttacker = false;
@@ -20,7 +20,7 @@ public class GameData : MonoBehaviour
         Died = false;
         Escaped = false;
         PlayerSeen = false;
-        PhoneFound = false;
+        WeaponFound = false;
         SurvivalTime = 0;
         GameStartTime = Time.time;
         FoughtAttacker = false;
