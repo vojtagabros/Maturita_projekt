@@ -11,6 +11,7 @@ public class EnemyVisibility : MonoBehaviour
         rend = GetComponent<Renderer>();
         ai = GetComponent<AIMovement>();
         rend.enabled = false;
+        GameData.PlayerSeen = false;
     }
 
     public void SetVisible(bool value)
