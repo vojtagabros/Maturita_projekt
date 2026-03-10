@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -389,7 +389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &61291068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1065,7 +1066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &161399749
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1689,7 +1691,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &210848645
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2472,7 +2475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &275886725
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2637,7 +2641,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &343410104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2997,7 +3002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &423910813
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4638,6 +4644,10 @@ MonoBehaviour:
   - {fileID: 1600816169}
   - {fileID: 1926401341}
   timeToWait: 10
+  moveSpeed: 7
+  acceleration: 20
+  angularSpeed: 720
+  stoppingDistance: 0.2
 --- !u!114 &551550281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4977,7 +4987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &574446654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5142,7 +5153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &588603802
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6134,7 +6146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &783261588
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6404,7 +6417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &810923339
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7028,7 +7042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &834638472
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7193,7 +7208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &900183377
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7358,7 +7374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &918436614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8038,6 +8055,10 @@ MonoBehaviour:
   - {fileID: 488623083}
   - {fileID: 1784396993}
   - {fileID: 1338189087}
+  moveSpeed: 6
+  acceleration: 20
+  angularSpeed: 720
+  stoppingDistance: 0.2
 --- !u!81 &934583260
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8265,7 +8286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &957949436
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8660,7 +8682,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &992345440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9178,7 +9201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!1 &1070766915
 GameObject:
   m_ObjectHideFlags: 0
@@ -9537,7 +9561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &1106764787
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9872,7 +9897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &1182380322
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10037,7 +10063,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &1195546561
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10616,7 +10643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &1351326396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14337,7 +14365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &1793894535
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15179,7 +15208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &1899966866
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15449,7 +15479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &1913925843
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16394,7 +16425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &2028387663
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16870,7 +16902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 934583256}
-  throwForce: 2
+  maxDistance: 2.5
+  connectedAnchor: {x: 0.32, y: -0.16, z: -2.62}
 --- !u!23 &2106235249
 MeshRenderer:
   m_ObjectHideFlags: 0

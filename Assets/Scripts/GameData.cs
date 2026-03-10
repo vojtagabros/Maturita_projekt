@@ -10,6 +10,8 @@ public class GameData : MonoBehaviour
     public static bool PhoneFound = false;
     public static float GameStartTime = 0;
     public static float SurvivalTime = 0;
+    public static bool FoughtAttacker = false;
+    public static bool FightWon = false;
 
     void Awake()
     {
@@ -21,5 +23,7 @@ public class GameData : MonoBehaviour
         PhoneFound = false;
         SurvivalTime = 0;
         GameStartTime = Time.time;
+        FoughtAttacker = false;
+        FightWon = false;
     }
 }

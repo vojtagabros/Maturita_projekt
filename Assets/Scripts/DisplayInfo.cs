@@ -64,11 +64,16 @@ public class DisplayInfo : MonoBehaviour
         string phone = GameData.PhoneFound ? "Ano  (+25 bodů)" : "Ne";
         string timeBonus = Mathf.Clamp(300 - Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 300).ToString();
 
+        string result = "";
+        if (GameData.FoughtAttacker)
+            result = "\nSouboj s útočníkem: Vyhráli jste! ✓";
+
         return
             "Čas úniku:       " + time + "  (bonus " + timeBonus + " bodů)\n" +
             "Detekován:       " + detected + "\n" +
             "Volal pomoc:     " + help + "\n" +
-            "Našel telefon:   " + phone;
+            "Našel telefon:   " + phone +
+            result;
     }
 
     private string BuildFailStats()
@@ -77,9 +82,14 @@ public class DisplayInfo : MonoBehaviour
         string phone = GameData.PhoneFound ? "Ano  (+25 bodů)" : "Ne";
         int survivalBonus = Mathf.Clamp(Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 200);
 
+        string result = "";
+        if (GameData.FoughtAttacker)
+            result = "\nSouboj s útočníkem: Prohráli jste.";
+
         return
             "Přežil:          " + time + "  (bonus " + survivalBonus + " bodů)\n" +
-            "Našel telefon:   " + phone;
+            "Našel telefon:   " + phone +
+            result;
     }
 
     private int CalculateScore()
