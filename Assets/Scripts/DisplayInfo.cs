@@ -57,7 +57,7 @@ public class DisplayInfo : MonoBehaviour
     private string BuildSuccessStats()
     {
         string time = GameData.SurvivalTime.ToString("F1") + "s";
-        string detected = GameData.PlayerSeen ? "Ano  (-200 bodů)" : "Ne  (+100 bodů)";
+        string detected = GameData.PlayerSeen ? "Ano  (-100 bodů)" : "Ne  (+100 bodů)";
         string help = GameData.HelpCalled == 0
             ? "Ne  (+75 bodů)"
             : "Ano, v " + GameData.HelpCalled.ToString("F1") + "s  (-75 bodů)";
