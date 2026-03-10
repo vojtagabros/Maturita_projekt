@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameData : MonoBehaviour
 {
@@ -13,7 +14,19 @@ public class GameData : MonoBehaviour
     public static bool FoughtAttacker = false;
     public static bool FightWon = false;
 
-    void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void Init()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "SampleScene")
+            Reset();
+    }
+
+    static void Reset()
     {
         HelpCalled = 0;
         ExitFound = 0;
@@ -25,5 +38,10 @@ public class GameData : MonoBehaviour
         GameStartTime = Time.time;
         FoughtAttacker = false;
         FightWon = false;
+    }
+
+    void Awake()
+    {
+        Reset();
     }
 }

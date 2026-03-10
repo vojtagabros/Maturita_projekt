@@ -64,7 +64,7 @@ public class DisplayInfo : MonoBehaviour
         string timeBonus = Mathf.Clamp(300 - Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 300).ToString();
 
         string result = "";
-        if (GameData.FoughtAttacker)
+        if (GameData.FoughtAttacker && GameData.FightWon)
             result = "\nSouboj s útočníkem: Vyhráli jste! ✓  (-200 bodů)";
 
         return
@@ -80,7 +80,7 @@ public class DisplayInfo : MonoBehaviour
         int survivalBonus = Mathf.Clamp(Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 200);
 
         string result = "";
-        if (GameData.FoughtAttacker)
+        if (GameData.FoughtAttacker && !GameData.FightWon)
             result = "\nSouboj s útočníkem: Prohráli jste.";
 
         return
