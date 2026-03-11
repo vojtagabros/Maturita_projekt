@@ -4,7 +4,7 @@ Unity 2022.3.16f1 stealth hra vytvořená jako maturitní projekt.
 
 **Hrát v prohlížeči:** https://vojtagabros.github.io/Maturita_projekt/
 
-**Teoretická část práce:** https://docs.google.com/document/d/1GJBLvGKVKsis_RNstjtR9hNV3VpBbZZQpGoVj2nr0eo/edit?usp=sharing
+**Teoretická část práce:** [https://docs.google.com/document/d/1GJBLvGKVKsis_RNstjtR9hNV3VpBbZZQpGoVj2nr0eo/edit?usp=sharing](https://docs.google.com/document/d/15nB_o6_Xwn8OF2tUwpRr33VQPAWshM7-7b_YZn-Q9y8/edit?usp=sharing)
 
 ## Gameplay
 
