@@ -20,7 +20,7 @@ Scene names used in `SceneManager.LoadScene()` (also loadable by index):
 ## Architecture
 
 ### Game State (`GameData.cs`)
-`GameData` is a static `MonoBehaviour` (reset in `Awake`). All gameplay scripts write to it; `DisplayInfo` reads it on the result screen.
+`GameData` is a `MonoBehaviour` with static fields. State is reset via `[RuntimeInitializeOnLoadMethod]` — a `sceneLoaded` handler resets all fields whenever `SampleScene` loads (plus in `Awake` as a fallback). All gameplay scripts write to it; `DisplayInfo` reads it on the result screen.
 
 | Field | Type | Set by | Meaning |
 |---|---|---|---|
