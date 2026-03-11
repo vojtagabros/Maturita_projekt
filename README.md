@@ -1,62 +1,64 @@
 # Maturita Projekt — Stealth/Escape Game
 
-Unity 2022.3.16f1 stealth game made as a graduation (maturita) project.
+Unity 2022.3.16f1 stealth hra vytvořená jako maturitní projekt.
 
-**Play in browser:** https://vojtagabros.github.io/Maturita_projekt/
+**Hrát v prohlížeči:** https://vojtagabros.github.io/Maturita_projekt/
+
+**Teoretická část práce:** https://docs.google.com/document/d/1GJBLvGKVKsis_RNstjtR9hNV3VpBbZZQpGoVj2nr0eo/edit?usp=sharing
 
 ## Gameplay
 
-The player must escape a level by reaching the exit while avoiding an enemy. The enemy patrols the level and starts chasing when it detects the player standing in light. The player can pick up a weapon and call for help. If caught, a random fight is resolved — winning the fight also counts as an escape.
+Hráč musí uniknout z úrovně dosažením východu a zároveň se vyhýbat nepříteli. Nepřítel hlídkuje po úrovni a začne pronásledovat hráče, jakmile ho spatří ve světle. Hráč může sebrat zbraň a zavolat pomoc. Pokud ho nepřítel dostihne, rozhodne se náhodný souboj — výhra v souboji se také počítá jako útěk.
 
-### Controls
+### Ovládání
 
-| Action | Input |
+| Akce | Vstup |
 |---|---|
-| Move | Left click |
-| Grab object | Hold Space |
-| Release object | Release Space |
+| Pohyb | Levé tlačítko myši |
+| Chytit objekt | Držet mezerník |
+| Pustit objekt | Pustit mezerník |
 
-### Scoring
+### Bodování
 
-| Condition | Points |
+| Podmínka | Body |
 |---|---|
-| Success base | 500 pts (300 if fought the enemy) |
-| Time bonus | max(0, 300 − elapsed seconds × 2) |
-| Not detected | +100 |
-| Help not called | +75 |
-| Failure survival bonus | min(200, elapsed seconds × 2) |
+| Základ za úspěch | 500 bodů (300 pokud došlo k souboji) |
+| Časový bonus | max(0, 300 − uplynulé sekundy × 2) |
+| Nebyl odhalen | +100 |
+| Nepožádal o pomoc | +75 |
+| Bonus za přežití (neúspěch) | min(200, uplynulé sekundy × 2) |
 
-Grades: A ≥ 850, B ≥ 700, C ≥ 500, D ≥ 300, F otherwise.
+Známky: A ≥ 850, B ≥ 700, C ≥ 500, D ≥ 300, jinak F.
 
-## Scenes
+## Scény
 
-- **MainMenu** — main menu
-- **SampleScene** — the game level
-- **ResultScene** — result screen with score and grade
+- **MainMenu** — hlavní menu
+- **SampleScene** — herní úroveň
+- **ResultScene** — obrazovka výsledků se skóre a známkou
 
-## Project Structure
+## Struktura projektu
 
 ```
 Assets/
-  Scripts/       — all C# gameplay scripts
-  Scenes/        — Unity scene files
-  Materials/     — materials for level geometry
+  Scripts/       — všechny C# herní skripty
+  Scenes/        — soubory Unity scén
+  Materials/     — materiály pro geometrii úrovně
   ProBuilder Data/
 ```
 
-### Key Scripts
+### Klíčové skripty
 
-| File | Class | Role |
+| Soubor | Třída | Role |
 |---|---|---|
-| `GameData.cs` | `GameData` | Static game state holder |
-| `AIMovement.cs` | `AIMovement` | Enemy NavMesh AI (wander → chase) |
-| `PlayerMovement.cs` | `RayVisualizer` | Click-to-move via NavMesh |
-| `PlayerLightDetector.cs` | `AreaLightDetector` | Detects enemy in light via OverlapSphere + raycast |
-| `EnemyVisibility.cs` | `EnemyVisibility` | Triggers enemy chase on detection |
-| `PlayerDeath.cs` | `PlayerDeath` | Resolves fight on enemy collision |
-| `DisplayInfo.cs` | `DisplayInfo` | Shows result screen with score |
-| `Exit.cs` | `Exit` | Triggers escape on exit contact |
+| `GameData.cs` | `GameData` | Uchovává stav hry |
+| `AIMovement.cs` | `AIMovement` | NavMesh AI nepřítele (hlídkování → pronásledování) |
+| `PlayerMovement.cs` | `RayVisualizer` | Pohyb kliknutím přes NavMesh |
+| `PlayerLightDetector.cs` | `AreaLightDetector` | Detekce nepřítele ve světle pomocí OverlapSphere + raycast |
+| `EnemyVisibility.cs` | `EnemyVisibility` | Spustí pronásledování při detekci |
+| `PlayerDeath.cs` | `PlayerDeath` | Vyřeší souboj při srážce s nepřítelem |
+| `DisplayInfo.cs` | `DisplayInfo` | Zobrazí obrazovku výsledků se skóre |
+| `Exit.cs` | `Exit` | Spustí útěk při kontaktu s východem |
 
-## Building
+## Sestavení
 
-Open the project in Unity 2022.3.16f1. Use **File → Build Settings** to build. Scripts target C# 9.0 / .NET 4.7.1.
+Otevři projekt v Unity 2022.3.16f1. Použij **File → Build Settings** pro sestavení. Skripty cílí na C# 9.0 / .NET 4.7.1.
