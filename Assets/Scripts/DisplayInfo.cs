@@ -59,8 +59,8 @@ public class DisplayInfo : MonoBehaviour
         string time = GameData.SurvivalTime.ToString("F1") + "s";
         string detected = GameData.PlayerSeen ? "Ano  (-100 bodů)" : "Ne  (+100 bodů)";
         string help = GameData.HelpCalled == 0
-            ? "Ne  (+75 bodů)"
-            : "Ano, v " + GameData.HelpCalled.ToString("F1") + "s  (-75 bodů)";
+            ? "Ne"
+            : "Ano, v " + GameData.HelpCalled.ToString("F1") + "s  (+75 bodů)";
         string timeBonus = Mathf.Clamp(300 - Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 300).ToString();
 
         string result = "";
@@ -95,7 +95,7 @@ public class DisplayInfo : MonoBehaviour
             int score = GameData.FoughtAttacker ? 300 : 500;
             score += Mathf.Clamp(300 - Mathf.FloorToInt(GameData.SurvivalTime) * 2, 0, 300);
             if (!GameData.PlayerSeen) score += 100;
-            if (GameData.HelpCalled == 0) score += 75;
+            if (GameData.HelpCalled != 0) score += 75;
             return score;
         }
         else
